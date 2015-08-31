@@ -48,4 +48,17 @@ public class TriangleNumbersTest {
     public void test3126250() {
         assertEquals(TriangleNumbers.isTriangleNumber(3126250), true);
     }
+
+    @Test
+    public void testNegativeNumber() {
+        assertEquals(TriangleNumbers.isTriangleNumber(-6), false);
+    }
+
+    @Test
+    public void testBigTriangles() {
+        for (int i = 0; i < 40000; i++) {
+            long num = i * (i + 1) / 2;
+            assertTrue("test for " + num, TriangleNumbers.isTriangleNumber(num));
+        }
+    }
 }
