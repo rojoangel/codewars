@@ -7,13 +7,8 @@ public class AreSame {
         if (a == null || b == null) return false;
         if (a.length != b.length) return false;
 
-        int[] sortedA = Arrays.stream(a).map(Math::abs).sorted().toArray();
+        int[] sortedA = Arrays.stream(a).map(x -> x*x).sorted().toArray();
         int[] sortedB = Arrays.stream(b).sorted().toArray();
-        for (int i = 0; i < a.length; i++) {
-            if (sortedA[i]*sortedA[i] != sortedB[i]) {
-                return false;
-            }
-        }
-        return true;
+        return Arrays.equals(sortedA, sortedB);
     }
 }
