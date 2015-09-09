@@ -1,6 +1,7 @@
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 import static org.junit.Assert.*;
 
@@ -14,7 +15,7 @@ public class PaginationHelperTest {
 
     @Test
     public void testItemCountEmptyCollection() throws Exception {
-        PaginationHelper helper = new PaginationHelper(Arrays.asList(), 4);
+        PaginationHelper helper = new PaginationHelper(Collections.emptyList(), 4);
         assertEquals("items count", 0, helper.itemCount());
     }
 
