@@ -51,6 +51,6 @@ public class PaginationHelper<I> {
         if (itemIndex < 0 || itemIndex > itemCount() -1) {
             return -1;
         }
-        return pageCount() - 1 >= 0 ? pageCount() -1 : -1;
+        return itemsPerPage == 0 ? -1 :itemIndex / itemsPerPage;
     }
 }
