@@ -48,6 +48,6 @@ public class PaginationHelper<I> {
      * this method should return -1 for itemIndex values that are out of range
      */
     public int pageIndex(int itemIndex) {
-        return -1;
+        return pageCount() - 1 >= 0 ? pageCount() -1 : -1;
     }
 }
