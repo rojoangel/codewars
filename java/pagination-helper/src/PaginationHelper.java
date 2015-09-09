@@ -29,7 +29,7 @@ public class PaginationHelper<I> {
      * returns the number of pages
      */
     public int pageCount() {
-        return (int) Math.ceil(itemCount() * 1.00 / itemsPerPage);
+        return itemsPerPage == 0 ? 0 : (int) Math.ceil(itemCount() * 1.00 / itemsPerPage);
     }
 
     /**
