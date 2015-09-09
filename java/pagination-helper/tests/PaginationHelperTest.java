@@ -72,6 +72,7 @@ public class PaginationHelperTest {
         PaginationHelper helper = new PaginationHelper<>(null, 4);
         assertEquals("page item count for null collection", -1, helper.pageItemCount(0));
     }
+
     @Test
     public void testPageItemCountEmptyCollection() throws Exception {
         PaginationHelper helper = new PaginationHelper<>(Collections.emptyList(), 4);
@@ -110,5 +111,11 @@ public class PaginationHelperTest {
     public void testPageItemCountNonEmptyCollectionNegativeIndex() throws Exception {
         PaginationHelper helper = new PaginationHelper<>(Arrays.asList('a', 'b', 'c', 'd', 'e', 'f'), 4);
         assertEquals("0 page item count for non empty collection & negative index", -1, helper.pageItemCount(-1));
+    }
+
+    @Test
+    public void testPageIndexNullCollection() throws Exception {
+        PaginationHelper helper = new PaginationHelper<>(null, 4);
+        assertEquals("page index for null collection", -1, helper.pageIndex(1));
     }
 }
