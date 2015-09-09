@@ -37,8 +37,11 @@ public class PaginationHelper<I> {
      * this method should return -1 for pageIndex values that are out of range
      */
     public int pageItemCount(int pageIndex) {
-        if (pageIndex + 1 == pageCount()) {
-            return itemCount();
+        if (pageIndex < pageCount() -1) {
+            return itemsPerPage;
+        }
+        if (pageIndex == pageCount() -1 ) {
+            return itemCount() % itemsPerPage == 0 ? itemsPerPage : itemCount() % itemsPerPage;
         }
         return -1;
     }
