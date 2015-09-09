@@ -37,10 +37,12 @@ public class Keypad {
         for (int i = 0; i < phrase.length(); i++) {
             String currentCharacter = phrase.substring(i, i + 1).toUpperCase();
             Key key = keypad.getKey(currentCharacter);
-            do {
-                tapCount++;
-            } while (!key.tap().equals(currentCharacter));
-            key.lockIn();
+            if (key != null) { // ignore not supported characters
+                do {
+                    tapCount++;
+                } while (!key.tap().equals(currentCharacter));
+                key.lockIn();
+            }
         }
         return tapCount;
     }

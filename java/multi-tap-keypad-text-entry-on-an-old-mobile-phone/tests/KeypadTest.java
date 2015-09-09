@@ -14,4 +14,9 @@ public class KeypadTest {
         assertEquals(13, Keypad.presses("how r u"));
     }
 
+    @Test
+    public void ignorePunctuationTest() {
+        assertEquals(9, Keypad.presses("lol!"));
+        assertEquals(13, Keypad.presses("@how r u"));
+    }
 }
