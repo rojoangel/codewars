@@ -21,6 +21,9 @@ public class PaginationHelper<I> {
      * returns the number of items within the entire collection
      */
     public int itemCount() {
+        if (collection == null) {
+            return 0;
+        }
         return collection.size();
     }
 
