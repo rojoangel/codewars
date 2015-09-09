@@ -26,9 +26,14 @@ public class PaginationHelperTest {
     }
 
     @Test
+    public void testPageCountNullCollection() throws Exception {
+        PaginationHelper helper = new PaginationHelper(null, 4);
+        assertEquals("page count for null collection", 0, helper.pageCount());
+    }
+
+    @Test
     public void testPageCountEmptyCollection() throws Exception {
         PaginationHelper helper = new PaginationHelper(Collections.emptyList(), 4);
         assertEquals("page count for empty collection", 0, helper.pageCount());
     }
-
 }
