@@ -118,4 +118,10 @@ public class PaginationHelperTest {
         PaginationHelper helper = new PaginationHelper<>(null, 4);
         assertEquals("page index for null collection", -1, helper.pageIndex(1));
     }
+
+    @Test
+    public void testPageIndexEmptyCollection() throws Exception {
+        PaginationHelper helper = new PaginationHelper<>(Collections.emptyList(), 4);
+        assertEquals("page index for null collection", -1, helper.pageIndex(1));
+    }
 }
