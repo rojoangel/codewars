@@ -90,4 +90,11 @@ public class PaginationHelperTest {
         assertEquals("0 page item count for non empty collection & itemsPerPage > collection size", 6, helper.pageItemCount(0));
         assertEquals("1 page item count for non empty collection & itemsPerPage > collection size", -1, helper.pageItemCount(1));
     }
+
+    @Test
+    public void testPageItemCountNonEmptyCollectionItemsPerPageEqualsToCollectionSize() throws Exception {
+        PaginationHelper helper = new PaginationHelper<>(Arrays.asList('a', 'b', 'c', 'd', 'e', 'f'), 6);
+        assertEquals("0 page item count for non empty collection & itemsPerPage == collection size", 6, helper.pageItemCount(0));
+        assertEquals("1 page item count for non empty collection & itemsPerPage == collection size", -1, helper.pageItemCount(1));
+    }
 }
