@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.List;
 
 // TODO: complete this object/class
@@ -13,7 +14,7 @@ public class PaginationHelper<I> {
      */
     public PaginationHelper(List<I> collection, int itemsPerPage) {
 
-        this.collection = collection;
+        this.collection = collection == null ? Collections.<I>emptyList() : collection;
         this.itemsPerPage = itemsPerPage;
     }
 
@@ -21,9 +22,6 @@ public class PaginationHelper<I> {
      * returns the number of items within the entire collection
      */
     public int itemCount() {
-        if (collection == null) {
-            return 0;
-        }
         return collection.size();
     }
 
