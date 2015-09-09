@@ -35,7 +35,7 @@ public class Keypad {
         Keypad keypad = new Keypad();
         int tapCount = 0;
         for (int i = 0; i < phrase.length(); i++) {
-            String currentCharacter = phrase.substring(i, i + 1);
+            String currentCharacter = phrase.substring(i, i + 1).toUpperCase();
             Key key = keypad.getKey(currentCharacter);
             do {
                 tapCount++;

@@ -7,4 +7,11 @@ public class KeypadTest {
         assertEquals(9, Keypad.presses("LOL"));
         assertEquals(13, Keypad.presses("HOW R U"));
     }
+
+    @Test
+    public void caseInsensitiveTest() {
+        assertEquals(9, Keypad.presses("lol"));
+        assertEquals(13, Keypad.presses("how r u"));
+    }
+
 }
