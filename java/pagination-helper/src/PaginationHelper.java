@@ -29,6 +29,9 @@ public class PaginationHelper<I> {
      * returns the number of pages
      */
     public int pageCount() {
+        if (itemCount() > 0) {
+            return itemCount() / itemsPerPage + 1;
+        }
         return 0;
     }
 
