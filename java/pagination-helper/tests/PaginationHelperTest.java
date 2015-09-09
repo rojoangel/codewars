@@ -149,4 +149,14 @@ public class PaginationHelperTest {
         assertEquals("6  page index for non empty collection && itemsPerPage > collection size", -1, helper.pageIndex(6));
     }
 
+    @Test
+    public void testPageIndexNonEmptyCollectionItemsPerPageEqualToCollectionSize() throws Exception {
+        PaginationHelper helper = new PaginationHelper<>(Arrays.asList('a', 'b', 'c', 'd', 'e', 'f'), 6);
+        assertEquals("0 page index for non empty collection && itemsPerPage > collection size", 0, helper.pageIndex(0));
+        assertEquals("1 page index for non empty collection && itemsPerPage > collection size", 0, helper.pageIndex(1));
+        assertEquals("2 page index for non empty collection && itemsPerPage > collection size", 0, helper.pageIndex(2));
+        assertEquals("3 page index for non empty collection && itemsPerPage > collection size", 0, helper.pageIndex(3));
+        assertEquals("4 page index for non empty collection && itemsPerPage > collection size", 0, helper.pageIndex(4));
+        assertEquals("5 page index for non empty collection && itemsPerPage > collection size", 0, helper.pageIndex(5));
+    }
 }
