@@ -67,4 +67,9 @@ public class PaginationHelperTest {
         assertEquals("page count for non empty collection and zero itemsPerPage", 0, helper.pageCount());
     }
 
+    @Test
+    public void testPageItemCountNullCollection() throws Exception {
+        PaginationHelper helper = new PaginationHelper<>(null, 4);
+        assertEquals("page item count for null collection", -1, helper.pageItemCount(0));
+    }
 }
