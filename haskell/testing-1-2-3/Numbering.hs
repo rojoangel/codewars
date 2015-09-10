@@ -1,4 +1,5 @@
 module Numbering where
 
 number :: [String] -> [String]
-number = error "todo"
+number = zipWith prependLineNum [1..]
+  where prependLineNum i x = show i ++ ": " ++ x
