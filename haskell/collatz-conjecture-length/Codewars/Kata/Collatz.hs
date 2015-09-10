@@ -5,5 +5,6 @@ collatz = length . collatzSequence
 
 collatzSequence :: Integer -> [Integer]
 collatzSequence n
-  | even n      =   n : collatzSequence (n `div` 2)
-  | otherwise  = [1]
+  | n == 1     = [1]
+  | even n     = n : collatzSequence (n `div` 2)
+  | otherwise  = n : collatzSequence (n * 3 + 1)
