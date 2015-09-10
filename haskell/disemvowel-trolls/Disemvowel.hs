@@ -1,4 +1,4 @@
 module Disemvowel where
 
 disemvowel :: String -> String
-disemvowel str = undefined
+disemvowel xs = [x | x <- xs, not $ x `elem` "aeiouAEIOU"]
