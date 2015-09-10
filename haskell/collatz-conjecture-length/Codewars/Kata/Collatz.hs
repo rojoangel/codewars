@@ -4,4 +4,5 @@ collatz :: Integer -> Int
 collatz = length . collatzSequence
 
 collatzSequence :: Integer -> [Integer]
-collatzSequence _ = [1]
+collatzSequence 1 = [1]
+collatzSequence 2 = 2 : collatzSequence (2 `div` 2)
