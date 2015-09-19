@@ -20,3 +20,5 @@ main = hspec $
       titleCase "OF" "a clash of KINGS" `shouldBe` "A Clash of Kings"
     it "matching minors capitalisation should not be considered" $
       titleCase "of" "a clash OF KINGS" `shouldBe` "A Clash of Kings"
+    it "should always capitalize 1st word" $
+      titleCase "a" "a clash OF KINGS" `shouldBe` "A Clash Of Kings"
