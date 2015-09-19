@@ -16,3 +16,7 @@ main = hspec $
       titleCase "" "a clash of KINGS" `shouldBe` "A Clash Of Kings"
     it "given matching minors should capitalize" $
       titleCase "of" "a clash of KINGS" `shouldBe` "A Clash of Kings"
+    it "matching minors capitalisation should not be considered" $
+      titleCase "OF" "a clash of KINGS" `shouldBe` "A Clash of Kings"
+    it "matching minors capitalisation should not be considered" $
+      titleCase "of" "a clash OF KINGS" `shouldBe` "A Clash of Kings"
