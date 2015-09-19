@@ -1,11 +1,14 @@
 module TitleCase (titleCase) where
 
-import qualified Data.Char as Char
+import Data.Char
 
 titleCase :: String -> String -> String
-titleCase zs xs = unwords . map toTitleCase $ words xs
-  where toTitleCase []      = []
-        toTitleCase word@(y:ys)
-          | word `elem` minors  = map Char.toLower word
-          | otherwise         = Char.toUpper y : map Char.toLower ys
+titleCase zs xs = unwords . map wordToTitleCase $ words xs
+  where wordToTitleCase []      = []
+        wordToTitleCase word
+          | word `elem` minors  = wordToLower word
+          | otherwise           = wordToCapital word
         minors = words zs
+        wordToLower = map toLower
+        wordToCapital []     = []
+        wordToCapital (y:ys) = toUpper y : map toLower ys
