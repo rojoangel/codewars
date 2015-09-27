@@ -1,4 +1,4 @@
 module Hamming where
 
 hamming :: String -> String -> Int
-hamming a b = undefined
+hamming a b = length . filter id $ zipWith (/=) a b
