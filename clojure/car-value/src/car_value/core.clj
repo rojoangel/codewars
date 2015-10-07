@@ -1,4 +1,5 @@
 (ns car-value.core)
 
 (defn car [price years]
-  "123.45")
+  (format "%.2f" (* price 0.8))
+  )
