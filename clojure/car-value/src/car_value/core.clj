@@ -9,11 +9,9 @@
 
 (defn car
   [price years]
-  (loop [depreciated-value price
+  (loop [value price
          year 1]
-    (if (= year years)
-      (format "%.2f" (double (* depreciated-value (- 1 (depreciation year)))))
-      (recur (* depreciated-value (- 1 (depreciation year))) (inc year))
-      )
-    )
-  )
+    (let [depreciated-value (* value (- 1 (depreciation year)))]
+      (if (= year years)
+        (format "%.2f" (double depreciated-value))
+        (recur depreciated-value (inc year))))))
