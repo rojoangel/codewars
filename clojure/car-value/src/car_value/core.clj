@@ -1,17 +1,11 @@
 (ns car-value.core)
 
-(defn depreciation
-  [year]
-  (if (< year 3)
-    0.20
-    0.10)
-  )
-
 (defn car
   [price years]
-  (loop [value price
-         year 1]
-    (let [depreciated-value (* value (- 1 (depreciation year)))]
-      (if (= year years)
-        (format "%.2f" (double depreciated-value))
-        (recur depreciated-value (inc year))))))
+  (let [years-20% (min years 2)
+        years-10% (max 0 (- years 2))]
+    (format
+      "%.2f"
+      (* price
+         (Math/pow 0.80 years-20%)
+         (Math/pow 0.90 years-10%)))))
