@@ -1,0 +1,1 @@
+Create a function that takes an integer as an argument and returns "Even" or "Odd".
