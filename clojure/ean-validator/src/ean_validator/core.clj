@@ -1,18 +1,10 @@
 (ns ean-validator.core)
 
 (defn validate-ean [ean-code]
-  (== 0
-      (mod
-       (- 10
-          (mod
-           (reduce +
-                   (map *
-                        (map #(- (int %) 48) (seq (str ean-code)))
-                        (flatten (repeat (list* 1 3 [1 3])))
-                        )
-                   )
-           10)
-          )
-       10)
-      )
-  )
+  (let [digitalized-ean (map #(Character/digit % 10) ean-code)
+        checksum (last digitalized-ean)
+        digits (butlast digitalized-ean)
+        sum-odds (reduce + (take-nth 2 digits))
+        sum-evens (reduce + (take-nth 2 (rest digits)))
+        sum (+ sum-odds (* 3 sum-evens))]
+    (== checksum (mod (- 10 (mod sum 10)) 10))))
