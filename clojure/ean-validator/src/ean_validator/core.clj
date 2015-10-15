@@ -7,7 +7,7 @@
           (mod
            (reduce +
                    (map *
-                        (map #(- (int %) 48) (seq (str ean-code)))
+                        (map #(Character/digit % 10) ean-code)
                         (flatten (repeat (list* 1 3 [1 3])))
                         )
                    )
