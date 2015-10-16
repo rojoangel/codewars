@@ -1,6 +1,5 @@
 (ns summation.core)
 
-(defn sum
+(defn sum [& nums]
   "Finds the sum of all of its arguments"
-  ; TODO: Program me
-  )
+  (apply + nums))
