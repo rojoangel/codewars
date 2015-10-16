@@ -19,3 +19,8 @@
   (testing "WEST annihilates EAST"
     (is (nil? (dirReduc ["WEST", "EAST"]))))
   )
+
+(deftest keep-reducing-at-the-beginning
+  (testing "consecutive NORTH SOUTH at the beginning"
+    (is (nil? (dirReduc ["NORTH", "SOUTH", "NORTH", "SOUTH"]))))
+  )
