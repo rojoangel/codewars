@@ -24,3 +24,8 @@
   (testing "consecutive NORTH SOUTH at the beginning"
     (is (nil? (dirReduc ["NORTH", "SOUTH", "NORTH", "SOUTH"]))))
   )
+
+(deftest skip-1st-position-and-keep-reducing
+    (testing "reduction not at the beginning"
+    (is (= (dirReduc ["EAST", "SOUTH", "NORTH", "EAST"]) ["EAST", "EAST"])))
+  )
