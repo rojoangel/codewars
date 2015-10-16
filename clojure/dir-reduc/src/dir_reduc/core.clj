@@ -2,5 +2,5 @@
 
 (defn dirReduc
   [arr]
-  ; your code
+  ["NORTH"]
 )
