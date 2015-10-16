@@ -16,4 +16,6 @@
     (is (nil? (dirReduc ["SOUTH", "NORTH"]))))
   (testing "EAST annihilates WEST"
     (is (nil? (dirReduc ["EAST", "WEST"]))))
+  (testing "WEST annihilates EAST"
+    (is (nil? (dirReduc ["WEST", "EAST"]))))
   )
