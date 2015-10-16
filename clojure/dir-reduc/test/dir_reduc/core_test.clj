@@ -2,9 +2,9 @@
   (:require [clojure.test :refer :all]
             [dir-reduc.core :refer :all]))
 
-(deftest single-steps
-  (testing "north is north"
+(deftest non-reducible-steps
+  (testing "single step"
     (is (= (dirReduc ["NORTH"]) ["NORTH"])))
-  (testing "south is south"
-    (is (= (dirReduc ["SOUTH"]) ["SOUTH"])))
+  (testing "multiple steps"
+    (is (= (dirReduc ["NORTH", "EAST"]) ["NORTH", "EAST"])))
   )
