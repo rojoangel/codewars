@@ -12,4 +12,6 @@
 (deftest two-reducible-steps
   (testing "NORTH annihilates SOUTH"
     (is (nil? (dirReduc ["NORTH", "SOUTH"]))))
+  (testing "SOUTH annihilates NORTH"
+    (is (nil? (dirReduc ["SOUTH", "NORTH"]))))
   )

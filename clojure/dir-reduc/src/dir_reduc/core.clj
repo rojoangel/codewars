@@ -1,7 +1,8 @@
 (ns dir-reduc.core)
 
 (defn dirReduc [arr]
-  (let [reducible? (partial contains? #{'("NORTH","SOUTH")})]
+  (let [reducible? (partial contains? #{'("NORTH","SOUTH")
+                                        '("SOUTH","NORTH")})]
   (if (reducible? (take 2 arr))
     (seq (drop 2 arr))
     (identity arr))))
