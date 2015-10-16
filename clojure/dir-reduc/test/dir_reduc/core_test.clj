@@ -29,3 +29,9 @@
     (testing "reduction not at the beginning"
     (is (= (dirReduc ["EAST", "SOUTH", "NORTH", "EAST"]) ["EAST", "EAST"])))
   )
+
+(deftest a-test1
+  (testing "Test 1"
+    (def ur ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])
+    (def vr ["WEST"])
+    (is (= (dirReduc ur) vr))))

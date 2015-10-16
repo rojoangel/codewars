@@ -9,5 +9,5 @@
   (if (empty? arr)
     (seq accumulate)
     (if (reducible? (take 2 arr))
-      (recur (seq (drop 2 arr)) accumulate)
+      (recur (concat accumulate (seq (drop 2 arr))) [])
       (recur (rest arr) (conj accumulate (first arr))))))))
