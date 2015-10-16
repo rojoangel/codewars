@@ -5,4 +5,6 @@
 (deftest single-steps
   (testing "north is north"
     (is (= (dirReduc ["NORTH"]) ["NORTH"])))
+  (testing "south is south"
+    (is (= (dirReduc ["SOUTH"]) ["SOUTH"])))
   )
