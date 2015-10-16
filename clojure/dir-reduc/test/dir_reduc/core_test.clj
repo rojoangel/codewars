@@ -8,3 +8,8 @@
   (testing "multiple steps"
     (is (= (dirReduc ["NORTH", "EAST"]) ["NORTH", "EAST"])))
   )
+
+(deftest two-reducible-steps
+  (testing "NORTH annihilates SOUTH"
+    (is (nil? (dirReduc ["NORTH", "SOUTH"]))))
+  )
