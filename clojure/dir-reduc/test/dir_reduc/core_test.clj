@@ -9,7 +9,7 @@
     (is (= (dirReduc ["NORTH", "EAST"]) ["NORTH", "EAST"])))
   )
 
-(deftest two-reducible-steps
+(deftest two-reducible-steps-at-the-beginning
   (testing "NORTH annihilates SOUTH"
     (is (nil? (dirReduc ["NORTH", "SOUTH"]))))
   (testing "SOUTH annihilates NORTH"
