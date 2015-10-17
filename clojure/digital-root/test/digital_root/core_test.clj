@@ -14,12 +14,10 @@
     (is (= (digital-root 8) 8)))
   )
 
-(deftest double-digit
-  (testing "digital-root of a double digit should be the sum of the digits"
+(deftest single-digit-result
+  (testing "digital-root of a double-digit single digit result should be the sum of the digits"
     (is (= (digital-root 16) 7)))
-  )
-
-(deftest triple-digit
-  (testing "digital-root of a triple digit should be the sum of the digits"
+  (testing "digital-root of a triple-digit single digit result should be the sum of the digits"
     (is (= (digital-root 161) 8)))
   )
+
