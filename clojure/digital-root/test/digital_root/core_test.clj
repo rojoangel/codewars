@@ -10,4 +10,6 @@
 (deftest single-digit
   (testing "digital-root of a single digit should be the digit"
     (is (= (digital-root 9) 9)))
+  (testing "digital-root of a different digit should be the digit"
+    (is (= (digital-root 8) 8)))
   )
