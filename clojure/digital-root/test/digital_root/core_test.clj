@@ -18,3 +18,8 @@
   (testing "digital-root of a double digit should be the sum of the digits"
     (is (= (digital-root 16) 7)))
   )
+
+(deftest triple-digit
+  (testing "digital-root of a triple digit should be the sum of the digits"
+    (is (= (digital-root 161) 8)))
+  )
