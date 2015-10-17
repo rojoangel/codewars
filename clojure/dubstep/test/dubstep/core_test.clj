@@ -5,6 +5,9 @@
 ;; When song contains no dub sequence should return song
 (expect "I" (song-decoder "I"))
 
+;; When song contains dub sequence at the beginning it should be removed
+(expect "I" (song-decoder "WUBI"))
+
 ;;(expect "A B C" (song-decoder "AWUBBWUBC"))
 
 ;;(expect"A B C" (song-decoder "AWUBWUBWUBBWUBWUBWUBC"))
