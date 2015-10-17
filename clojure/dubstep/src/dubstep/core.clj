@@ -1,5 +1,7 @@
-(ns dubstep.core)
+(ns dubstep.core
+  (:require [clojure.string :as str]))
 
 (defn song-decoder [song]
-  (clojure.string/replace song #"WUB" "")
-)
+  (str/join " "
+            (filter #(not (str/blank? %))
+                    (str/split song #"WUB"))))

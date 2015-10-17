@@ -14,6 +14,9 @@
 ;; When song contains dub sequence at the beginning & end it should be removed
 (expect "I" (song-decoder "WUBIWUB"))
 
+;; When song contains multiple words they should be separated by a whitespace
+(expect "I ROCK" (song-decoder "IWUBROCK"))
+
 ;;(expect "A B C" (song-decoder "AWUBBWUBC"))
 
 ;;(expect"A B C" (song-decoder "AWUBWUBWUBBWUBWUBWUBC"))
