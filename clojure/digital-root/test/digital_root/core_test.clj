@@ -21,3 +21,8 @@
     (is (= (digital-root 161) 8)))
   )
 
+(deftest double-digit-result
+  (testing "digital-root of a double digit result should be the sum of the digits"
+    (is (= (digital-root 86) 5)))
+  )
+
