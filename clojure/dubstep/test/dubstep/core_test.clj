@@ -11,6 +11,9 @@
 ;; When song contains dub sequence at the end it should be removed
 (expect "I" (song-decoder "IWUB"))
 
+;; When song contains dub sequence at the beginning & end it should be removed
+(expect "I" (song-decoder "WUBIWUB"))
+
 ;;(expect "A B C" (song-decoder "AWUBBWUBC"))
 
 ;;(expect"A B C" (song-decoder "AWUBWUBWUBBWUBWUBWUBC"))
