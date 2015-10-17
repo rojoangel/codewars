@@ -8,6 +8,10 @@
   (testing "weighting a single item should return the item itself"
     (is (= (order-weight "100") "100"))))
 
+(deftest two-items
+  (testing "weighting already ordered items should return the items"
+    (is (= (order-weight "100 101") "100 101"))))
+
 (comment
   (deftest a-test1
     (testing "Basic tests"
