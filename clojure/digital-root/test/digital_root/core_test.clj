@@ -26,3 +26,8 @@
     (is (= (digital-root 86) 5)))
   )
 
+(deftest n-digit-result
+  (testing "digital-root of a n-digit result should be the sum of the digits"
+    (is (= (digital-root 55555555555555555555) 1)))
+  )
+
