@@ -13,3 +13,8 @@
   (testing "digital-root of a different digit should be the digit"
     (is (= (digital-root 8) 8)))
   )
+
+(deftest double-digit
+  (testing "digital-root of a double digit should be the sum of the digits"
+    (is (= (digital-root 16) 7)))
+  )
