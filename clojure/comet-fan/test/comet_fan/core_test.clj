@@ -16,3 +16,8 @@
   (testing "mission should stay"
     (is (= (ride "COMETQ" "HVNGAZ") "STAY")))
   )
+
+(deftest mission-stays
+  (testing "mission should go"
+    (is (= (ride "COMETQ" "HVNGAT") "GO")))
+  )
