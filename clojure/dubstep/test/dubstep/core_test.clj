@@ -17,8 +17,11 @@
 ;; When song contains multiple words they should be separated by a whitespace
 (expect "I ROCK" (song-decoder "IWUBROCK"))
 
-;;(expect "A B C" (song-decoder "AWUBBWUBC"))
+;; Codewars test 1
+(expect "A B C" (song-decoder "AWUBBWUBC"))
 
-;;(expect"A B C" (song-decoder "AWUBWUBWUBBWUBWUBWUBC"))
+;; Codewars test 2
+(expect"A B C" (song-decoder "AWUBWUBWUBBWUBWUBWUBC"))
 
-;;(expect "A B C" (song-decoder "WUBAWUBBWUBCWUB"))
+;; Codewars test 3
+(expect "A B C" (song-decoder "WUBAWUBBWUBCWUB"))
