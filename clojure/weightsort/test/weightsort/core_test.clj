@@ -12,7 +12,9 @@
   (testing "weighting already ordered items should return the items"
     (is (= (order-weight "100 101") "100 101")))
   (testing "weighting unordered items should return the ordered items"
-    (is (= (order-weight "101 100") "100 101"))))
+    (is (= (order-weight "101 100") "100 101")))
+  (testing "same weighted items should be ordered as strings"
+    (is (= (order-weight "27 18") "18 27"))))
 
 (comment
   (deftest a-test1
