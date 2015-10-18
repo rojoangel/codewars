@@ -7,4 +7,6 @@
     true
     (if (= (first s) (first p1))
       (recur (rest s) (rest p1) p2)
-      false)))
+      (if (= (first s) (first p2))
+        (recur (rest s) p1 (rest p2))
+        false))))

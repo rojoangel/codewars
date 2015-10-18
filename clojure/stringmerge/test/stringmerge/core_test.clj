@@ -12,6 +12,8 @@
 (deftest single-characters
   (testing "c should be merge of c nil"
     (is (is-merge "c" "c" nil)))
+  (testing "c should be merge of nil c"
+    (is (is-merge "c" nil "c")))
   )
 
 
