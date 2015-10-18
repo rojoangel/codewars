@@ -16,6 +16,10 @@
     (is (is-merge "c" nil "c")))
   )
 
+(deftest code
+  (testing "codewars should not be merge of codes and wars"
+    (is (not (is-merge "codewars" "codes" "wars")))))
+
 (deftest codewars-tests
  (testing "codewars is code and wars"
    (is (is-merge "codewars" "code" "wars")))
