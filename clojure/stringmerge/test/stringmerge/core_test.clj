@@ -2,6 +2,12 @@
   (:require [clojure.test :refer :all]
             [stringmerge.core :refer :all]))
 
+(deftest nil-nil-merge
+  (testing "nil should be gmerge of nil nil"
+    (is (is-merge nil nil nil)))
+  )
+
+(comment
 (deftest example-tests
  (testing "codewars is code and wars"
    (is (is-merge "codewars" "code" "wars")))
@@ -9,3 +15,4 @@
    (is (is-merge "codewars" "cdw" "oears")))
  (testing "codewars are not codwars"
    (is (not( is-merge "codewars" "cod" "war")))))
+  )
