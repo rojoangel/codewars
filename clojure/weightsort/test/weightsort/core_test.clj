@@ -17,6 +17,10 @@
     (is (= (order-weight "27 18") "18 27"))))
 
 (comment
+(deftest big-numbers
+  (testing "should work for big numbers"
+    (is (= (order-weight "1234000 44444444") "1234000 44444444"))))
+
   (deftest a-test1
     (testing "Basic tests"
       (is (= (order-weight "103 123 4444 99 2000") "2000 103 123 4444 99"))

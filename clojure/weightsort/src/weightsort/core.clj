@@ -8,4 +8,4 @@
             (let [sum (reduce + digits)]
               (if (> sum 9) (recur sum) sum)))]
     (str/join " "
-              (sort-by #(+ (weight (digits %)) (* 0.1 (read-string %))) (str/split strng #" ")))))
+              (sort-by (juxt #(weight (digits %)) identity) (str/split strng #" ")))))
