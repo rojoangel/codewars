@@ -2,9 +2,11 @@
   (:require [clojure.test :refer :all]
             [stringmerge.core :refer :all]))
 
-(deftest nil-nil-merge
-  (testing "nil should be gmerge of nil nil"
+(deftest empty-collections
+  (testing "nil should be merge of nil nil"
     (is (is-merge nil nil nil)))
+  (testing "empty should be merge of empty empty"
+    (is (is-merge "" "" "")))
   )
 
 (comment
