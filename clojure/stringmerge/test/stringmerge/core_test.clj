@@ -9,6 +9,12 @@
     (is (is-merge "" "" "")))
   )
 
+(deftest single-characters
+  (testing "c should be merge of c nil"
+    (is (is-merge "c" "c" nil)))
+  )
+
+
 (comment
 (deftest example-tests
  (testing "codewars is code and wars"

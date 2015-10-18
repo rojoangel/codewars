@@ -5,4 +5,6 @@
   [s p1 p2]
   (if (and (empty? s) (empty? p1) (empty? p2))
     true
-    false))
+    (if (= (first s) (first p1))
+      (recur (rest s) (rest p1) p2)
+      false)))
