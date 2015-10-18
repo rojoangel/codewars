@@ -2,10 +2,10 @@
   (:require [clojure.string :as str]))
 
 (defn order-weight [strng]
-  (letfn [(extract-digits [number]
+  (letfn [(digits [number]
             (map #(Character/digit % 10) number))
           (weight [digits]
-            (let [sum (reduce + digits)]
-              (if (> sum 9) (recur (extract-digits (str sum))) sum)))]
+            (reduce + digits))]
     (str/join " "
-              (sort-by (juxt #(weight (extract-digits %)) identity) (str/split strng #" ")))))
+              (sort-by (juxt #(weight (digits %)) str)
+                       (str/split strng #" ")))))
