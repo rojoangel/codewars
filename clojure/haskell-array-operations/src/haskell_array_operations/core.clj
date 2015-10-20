@@ -1,4 +1,13 @@
 (ns haskell-array-operations.core)
 
-; TODO: implement the four functions specified.
-; Remember to call `last' `last_' to avod naming clashes.
+(defn head [xs]
+  (first xs))
+
+(defn tail [xs]
+  (drop 1 xs))
+
+(defn init [xs]
+  (drop-last xs))
+
+(defn last_ [xs]
+  (last xs))
