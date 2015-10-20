@@ -2,5 +2,5 @@
 
 (defn spread
   [func, args]
-  ; ...
+  (apply func args)
 )
