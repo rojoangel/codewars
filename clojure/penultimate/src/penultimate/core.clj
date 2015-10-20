@@ -3,5 +3,5 @@
 (defn penultimate
   "Gets the second to last element of an ISeq"
   [lst]
-  ; TODO: Program Me
+  (first (take-last 2 lst))
 )
