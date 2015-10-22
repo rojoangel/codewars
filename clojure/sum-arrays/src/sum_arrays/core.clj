@@ -2,5 +2,4 @@
 
 (defn sum
   [a]
-  ; TODO
-  )
+  (reduce + a))
