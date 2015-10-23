@@ -6,8 +6,8 @@
      nil
     (sq-in-rect lng wdth [])))
   ([lng wdth accumulated]
-    (if (= lng wdth)
+    (let [min-side (min lng wdth)
+          max-side (max lng wdth)]
+     (if (= lng wdth)
       (conj accumulated lng)
-      (recur (- (max lng wdth) (min lng wdth))
-             (min lng wdth)
-             (conj accumulated (min lng wdth))))))
+      (recur (- max-side min-side) min-side (conj accumulated min-side))))))
